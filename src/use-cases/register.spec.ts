@@ -8,12 +8,12 @@ let usersRepository: InMemoryUsersRepository
 let sut: RegisterUseCase
 
 describe('Register Use Case', () => {
-  it('should be able to register', async () => {
-    beforeEach(() => {
-      usersRepository = new InMemoryUsersRepository()
-      sut = new RegisterUseCase(usersRepository)
-    })
+  beforeEach(() => {
+    usersRepository = new InMemoryUsersRepository()
+    sut = new RegisterUseCase(usersRepository)
+  })
 
+  it('should be able to register', async () => {
     const { user } = await sut.execute({
       name: 'John Doe',
       email: 'johnDoe@exemple.com',
