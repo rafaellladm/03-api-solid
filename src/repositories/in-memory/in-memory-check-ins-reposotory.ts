@@ -5,7 +5,7 @@ import { randomUUID } from 'node:crypto'
 export class InMemoryCheckInRepository implements CheckInsRepository {
   public items: CheckIn[] = []
 
-  async findByUserIdOnDate(userId: string, date: Date) {
+  async findByUserIdOnDate(userId: string) {
     const checkInOnSameDate = this.items.find(
       (checkIn) => checkIn.user_id === userId,
     )
