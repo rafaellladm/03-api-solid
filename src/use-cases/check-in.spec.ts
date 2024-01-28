@@ -1,4 +1,4 @@
-import { InMemoryCheckInRepository } from '@/repositories/in-memory/in-memory-check-ins-reposotory'
+import { InMemoryCheckInRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { CheckInUseCase } from './check-in'
 import { afterEach } from 'node:test'
