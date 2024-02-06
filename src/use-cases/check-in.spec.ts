@@ -92,8 +92,8 @@ describe('Check-in Use Case', () => {
       title: 'JavaScript Gym',
       description: '',
       phone: '',
-      latitude: new Decimal(-4.0470753),
-      longitude: new Decimal(-38.713181),
+      latitude: -4.0470753,
+      longitude: -38.713181,
     })
 
     await expect(() =>
