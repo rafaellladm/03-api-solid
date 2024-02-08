@@ -34,7 +34,7 @@ describe('Check-in Use Case', () => {
 
   it('should be able to check in', async () => {
     const { checkIn } = await sut.execute({
-      gymId: 'gyn-01',
+      gymId: 'gym-01',
       userId: 'user-01',
       userLatitude: -4.1722371,
       userLongitude: -38.8623547,
@@ -47,7 +47,7 @@ describe('Check-in Use Case', () => {
     vi.setSystemTime(new Date(2023, 0, 20, 8, 0, 0))
 
     await sut.execute({
-      gymId: 'gyn-01',
+      gymId: 'gym-01',
       userId: 'user-01',
       userLatitude: -4.1722371,
       userLongitude: -38.8623547,
@@ -55,7 +55,7 @@ describe('Check-in Use Case', () => {
 
     await expect(() =>
       sut.execute({
-        gymId: 'gyn-01',
+        gymId: 'gym-01',
         userId: 'user-01',
         userLatitude: -4.1722371,
         userLongitude: -38.8623547,
@@ -67,7 +67,7 @@ describe('Check-in Use Case', () => {
     vi.setSystemTime(new Date(2023, 0, 20, 8, 0, 0))
 
     await sut.execute({
-      gymId: 'gyn-01',
+      gymId: 'gym-01',
       userId: 'user-01',
       userLatitude: -4.1722371,
       userLongitude: -38.8623547,
@@ -76,7 +76,7 @@ describe('Check-in Use Case', () => {
     vi.setSystemTime(new Date(2023, 0, 21, 8, 0, 0))
 
     const { checkIn } = await sut.execute({
-      gymId: 'gyn-01',
+      gymId: 'gym-01',
       userId: 'user-01',
       userLatitude: -4.1722371,
       userLongitude: -38.8623547,
@@ -97,10 +97,10 @@ describe('Check-in Use Case', () => {
 
     await expect(() =>
       sut.execute({
-        gymId: 'gyn-01',
+        gymId: 'gym-01',
         userId: 'user-01',
-        userLatitude: -4.1722371,
-        userLongitude: -38.8623547,
+        userLatitude: 0,
+        userLongitude: 0,
       }),
     ).rejects.toBeInstanceOf(MaxDistanceError)
   })
